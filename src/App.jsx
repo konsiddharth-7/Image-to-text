@@ -20,9 +20,9 @@ function App() {
     }
 
     try {
-      // Fetching through the Vite proxy to avoid CORS issues
+      // Removing local vite proxy and fetching directly for Vercel production deployment
       const response = await fetch(
-        "/api/hf/models/stabilityai/stable-diffusion-xl-base-1.0",
+        "https://router.huggingface.co/hf-inference/models/stabilityai/stable-diffusion-xl-base-1.0",
         {
           headers: {
             Authorization: `Bearer ${token}`,
